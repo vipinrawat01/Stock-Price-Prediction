@@ -94,6 +94,7 @@ tensorflow==2.16.1
 tensorflow-estimator==2.12.0
 termcolor==2.5.0
 threadpoolctl==3.5.0
+tensorflow-io-gcs-filesystem==0.31.0
 toml==0.10.2
 tornado==6.4.1
 traitlets==5.14.3
