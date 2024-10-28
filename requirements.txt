@@ -38,7 +38,7 @@ jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 jupyter_client==8.6.3
 jupyter_core==5.7.2
-keras>=3.0.0
+keras==2.12.0
 keras-tuner==1.4.7
 kiwisolver==1.4.7
 kt-legacy==1.0.5
@@ -50,7 +50,7 @@ MarkupSafe==3.0.1
 matplotlib==3.9.2
 matplotlib-inline==0.1.7
 mdurl==0.1.2
-ml-dtypes>=0.3.1
+ml_dtypes==0.5.0
 multitasking==0.0.11
 narwhals==1.9.3
 nest-asyncio==1.6.0
@@ -90,11 +90,13 @@ soupsieve==2.6
 stack-data==0.6.3
 streamlit==1.39.0
 tenacity==9.0.0
-tensorflow==2.16.1
+tensorboard==2.12.3
+tensorboard-data-server==0.7.2
+tensorflow==2.12.0
 tensorflow-estimator==2.12.0
+tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.5.0
 threadpoolctl==3.5.0
-tensorflow-io-gcs-filesystem==0.31.0
 toml==0.10.2
 tornado==6.4.1
 traitlets==5.14.3
