@@ -12,6 +12,54 @@ xgb_model = joblib.load('xgboost_stock_model.pkl')
 lstm_model = load_model('lstm_stock_model.h5')
 scaler = joblib.load('scaler.pkl')
 
+# Add custom CSS for a darker blue background and improved aesthetics
+st.markdown("""
+    <style>
+        /* Set the background color */
+        .main {
+            background-color: #B3E5FC;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .stApp {
+            background-color: #B3E5FC;
+        }
+        /* Customize the title */
+        h1 {
+            color: #01579B;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Style the selectbox */
+        .stSelectbox {
+            font-size: 16px;
+            color: #004D40;
+        }
+        
+        /* Customize other elements */
+        .stButton>button {
+            background-color: #0288D1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .stButton>button:hover {
+            background-color: #0277BD;
+        }
+        
+        /* Style the text */
+        .stMarkdown, .stText {
+            color: #004D40;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Function to fetch all stock tickers (Example: S&P 500)
 def get_all_stock_tickers():
     sp500_tickers = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]['Symbol'].tolist()
@@ -26,8 +74,6 @@ def preprocess_data(df):
     # Add technical indicators
     df['SMA_50'] = df['Close'].rolling(window=50).mean()
     df['EMA_20'] = df['Close'].ewm(span=20, adjust=False).mean()
-
-    # Create new columns for daily returns and log returns
     df['Daily_Return'] = df['Close'].pct_change()
     df['Log_Return'] = np.log(df['Close'] / df['Close'].shift(1))
 
