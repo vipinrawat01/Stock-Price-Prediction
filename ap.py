@@ -67,7 +67,7 @@ def get_all_stock_tickers():
 
 # Function to download stock data
 def download_stock_data(ticker):
-    return yf.download(ticker, start="2018-01-01", end=datetime.now().strftime('%Y-%m-%d'))
+    return yf.download(ticker, start="2020-01-01", end=datetime.now().strftime('%Y-%m-%d'))
 
 # Preprocess the stock data and add technical indicators
 def preprocess_data(df):
